@@ -1,0 +1,8 @@
+<div class="topnav">
+  <a class="active" href="#">Blogs Api</a>
+  <% if session[:token] == nil %>
+    <%= link_to 'Login', new_session_path, class: "btn btn-success login-button" %>
+  <% else %>
+      <%= button_to 'Logout', session_path(id: "id"), class: "btn btn-success logout-button", data: { confirm: "Are you sure?" }, method: :delete %>
+  <% end %>
+</div>

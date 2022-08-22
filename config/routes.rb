@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :registrations
   resources :confirmations
   resources :home
-  root 'blogs#index'
+  get '/search/blog', to: 'blogs#search_blog'
+
+  root 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

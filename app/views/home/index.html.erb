@@ -1,8 +1,9 @@
+<%= render 'shared/topbar' %>
+
 <p> Main page </p>
 
-<h2> Your are verified! </h2>
+<h2> Welcome to Blogs Api </h2>
 
-<% if @body["token"].empty? == false %>
  <h3> Now that you are verified, what would you like to do? </h3>
  <h4><%= link_to 'View blogs', blogs_path %></h4>
  <h4>
@@ -14,4 +15,3 @@
  </h4>
  <h4>View comments</h4>
  <h4>Create a comment</h4>
-<% end %>
