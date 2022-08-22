@@ -8,8 +8,11 @@ Rails.application.routes.draw do
     resources :comments
     resources :blog_likes
   end 
-  post '/session/new', to: 'sessions#create'
-  post '/registration/new', to: 'registrations#create'
-  get '/confirmation/new', to: 'confirmations#create'
+  
+  resources :sessions
+  resources :registrations
+  resources :confirmations
+
+  root 'sessions#new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
