@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     
     if @body.empty? == false
       session[:token] = @body["token"]
-      redirect_to home_index_path 
+      redirect_to blogs_path 
     end
 
     rescue RestClient::Unauthorized => exception
@@ -19,6 +19,8 @@ class SessionsController < ApplicationController
   end 
 
   def destroy
+    session[:token] = nil
+    redirect_to blogs_path
   end 
   
 end

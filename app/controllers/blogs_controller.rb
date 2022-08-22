@@ -1,6 +1,5 @@
 class BlogsController < ApplicationController
   def index
-    byebug
     @body = RestClient.get "https://blogs-rest-api.herokuapp.com/api/v1/blogs",
     @headers = {accept: :json,  'x-api-key' => ENV["SYGIC_API_KEY"]}
     @body = JSON.parse(@body)
