@@ -1,5 +1,5 @@
 Login
-
+<%= render 'shared/flash_messages' %>
 <%= form_with url: sessions_path, method: :post do |f| %>
   <%= f.text_field :email %>
   <%= f.password_field :password %>

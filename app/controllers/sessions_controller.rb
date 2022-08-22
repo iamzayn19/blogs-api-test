@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
     end
 
     rescue RestClient::Unauthorized => exception
-      render json: "Invalid email/password"
+      flash[:alert] = "Invalid email or password. Please try again!"
+      redirect_to new_session_path
     return
   end 
 
