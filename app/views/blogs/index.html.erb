@@ -1,4 +1,14 @@
-Blogs
+<p> Main page </p>
+
+<h2> Welcome to Blogs Api </h2>
+
+<%= render 'shared/flash_messages' %>
+
+<% if session[:token] == nil %>
+    <%= link_to 'Login', new_session_path %>
+<% else %>
+    <%= link_to 'Logout', session_path(id: "id"), data: { confirm: "Are you sure?" }, method: :delete %>
+<% end %>
 
 <% if @body.empty? == false %>
   <% @body["data"].each do |blog| %>
@@ -7,7 +17,6 @@ Blogs
         <th> Title </th>
         <th> Body </th>
       </tr>
-<%# @body["data"][0]["attributes"]["title"] %>
       <tr>
         <td> <%= blog["attributes"]["title"] %></td>
         <td> <%= blog["attributes"]["body"] %> </td>
