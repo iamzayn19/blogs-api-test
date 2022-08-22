@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     
     if @body.empty? == false
       session[:token] = @body["token"]
+      flash[:success] = "Login successful!"
       redirect_to blogs_path 
     end
 
@@ -20,6 +21,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:token] = nil
+    flash[:success] = "Logout successful!"
     redirect_to blogs_path
   end 
   
