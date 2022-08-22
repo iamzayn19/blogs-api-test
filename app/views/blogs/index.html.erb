@@ -1,0 +1,18 @@
+Blogs
+
+<% if @body.empty? == false %>
+  <% @body["data"].each do |blog| %>
+    <table>
+      <tr>
+        <th> Title </th>
+        <th> Body </th>
+      </tr>
+<%# @body["data"][0]["attributes"]["title"] %>
+      <tr>
+        <td> <%= blog["attributes"]["title"] %></td>
+        <td> <%= blog["attributes"]["body"] %> </td>
+      </tr>
+    </table>
+  <% end %>
+<% end %>
+

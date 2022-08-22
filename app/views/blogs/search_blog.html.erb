@@ -1,0 +1,14 @@
+Search results:
+
+<% if @body.empty? == false %>
+  <table>
+    <tr>
+      <th> Title </th>
+      <th> Body </th>
+    </tr>
+    <tr>
+      <td> <%= @body["data"]["attributes"]["title"] %> </td>
+      <td> <%= @body["data"]["attributes"]["body"] %> </td>
+    </tr>
+  </table>
+<% end %>
