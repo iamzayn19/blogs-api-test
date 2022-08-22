@@ -1,4 +1,12 @@
-Blogs
+<p> Main page </p>
+
+<h2> Welcome to Blogs Api </h2>
+
+<% if session[:token] == nil %>
+    <%= link_to 'Login', new_session_path %>
+
+<% end %>
+
 <% if @body.empty? == false %>
   <% @body["data"].each do |blog| %>
     <table>

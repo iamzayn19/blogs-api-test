@@ -1,3 +1,17 @@
-<% flash.each do |type,message| %>
-  <%= message %>
+<p> Main page </p>
+
+<h2> Your are verified! </h2>
+
+<% if @body["token"].empty? == false %>
+ <h3> Now that you are verified, what would you like to do? </h3>
+ <h4><%= link_to 'View blogs', blogs_path %></h4>
+ <h4>
+  View specific blog
+  <%= form_with url: search_blog_path, method: :get do |f| %>
+    <%= f.text_field :id %>
+    <%= f.submit :Search %>
+  <% end %>
+ </h4>
+ <h4>View comments</h4>
+ <h4>Create a comment</h4>
 <% end %>
