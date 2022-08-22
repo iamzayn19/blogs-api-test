@@ -1,0 +1,2 @@
+class BlogLikesController < ApplicationController
+end
